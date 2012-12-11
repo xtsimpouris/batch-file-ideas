@@ -31,7 +31,7 @@ popd
   sox --show-progress -v %APL_VALUE% "%~1_clean.wav" "%~1_norm.wav"
 
   call :ColorText 0A "Creating new video file, encoding audio.."
-  ffmpeg.exe -i "%~1_clean.avi" -i "%~1_norm.wav" -vcodec copy -acodec libvo_aacenc -ab 128k -y "%~1"
+  ffmpeg.exe -i "%~1_clean.avi" -i "%~1_norm.wav" -vcodec copy -y "%~1"
 
   call :ColorText 0A "Cleaning.."
   del "%~1_clean.wav"
